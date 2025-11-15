@@ -1,0 +1,120 @@
+// Ferrari Custom Theme Configuration
+@use '@carbon/react/scss/themes' as *;
+@use '@carbon/react/scss/theme' with (
+  $fallback: $g100,
+  $theme: (
+    // Ferrari Brand Colors
+    background: #181818,
+    layer-01: #000000,
+    layer-02: #181818,
+    layer-03: #27272A,
+    
+    // Ferrari Red Accents
+    interactive: #DC0000,
+    button-primary: #DC0000,
+    button-primary-hover: #B00000,
+    button-primary-active: #8B0000,
+    
+    // Text Colors
+    text-primary: #FFFFFF,
+    text-secondary: #E5E5E5,
+    text-placeholder: #737373,
+    text-on-color: #FFFFFF,
+    text-disabled: #404040,
+    
+    // Borders
+    border-subtle: #404040,
+    border-strong: #737373,
+    border-interactive: #DC0000,
+    
+    // Focus
+    focus: #DC0000,
+    
+    // Support Colors
+    support-error: #DC0000,
+    support-success: #198038,
+    support-warning: #F1C21B,
+    support-info: #4589FF,
+    
+    // Icons
+    icon-primary: #FFFFFF,
+    icon-secondary: #E5E5E5,
+    icon-on-color: #FFFFFF,
+    icon-interactive: #DC0000,
+    
+    // Field
+    field: #27272A,
+    field-hover: #404040,
+    
+    // Custom Ferrari Tokens
+    ferrari-red: #DC0000,
+    ferrari-black: #181818,
+    ferrari-dark: #000000,
+    ferrari-gray: #737373,
+    ferrari-light-gray: #E5E5E5,
+  )
+);
+
+@use '@carbon/react';
+
+// Apply Ferrari theme globally
+:root {
+  @include theme.theme();
+}
+
+// Custom Ferrari Typography
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #181818;
+  color: #FFFFFF;
+}
+
+// Ferrari Button Overrides
+.cds--btn--primary {
+  background-color: #DC0000;
+  border-color: #DC0000;
+  
+  &:hover {
+    background-color: #B00000;
+    border-color: #B00000;
+  }
+  
+  &:active {
+    background-color: #8B0000;
+    border-color: #8B0000;
+  }
+}
+
+// Ferrari Link Styles
+.cds--link {
+  color: #DC0000;
+  
+  &:hover {
+    color: #B00000;
+  }
+}
+
+// Ferrari Focus Styles
+*:focus {
+  outline: 2px solid #DC0000;
+  outline-offset: 2px;
+}
+
+// Custom Ferrari Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+  
+  &:hover {
+    background: #737373;
+  }
+}

@@ -1,0 +1,287 @@
+@use './ferrari-theme.scss';
+@use '@carbon/react/scss/spacing' as *;
+
+// Ferrari Global Styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  background: #181818;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+// Ferrari Header Styles
+.ferrari-header {
+  background: #000000;
+  border-bottom: 1px solid #404040;
+  padding: $spacing-03 $spacing-05;
+  
+  .ferrari-logo {
+    height: 24px;
+    width: auto;
+  }
+  
+  .ferrari-search {
+    background: #27272A;
+    border: 1px solid #404040;
+    border-radius: 24px;
+    color: #FFFFFF;
+    
+    &:focus {
+      border-color: #DC0000;
+      outline: none;
+    }
+  }
+}
+
+// Ferrari Sidebar Styles
+.ferrari-sidebar {
+  background: #000000;
+  border-right: 1px solid #404040;
+  
+  .ferrari-nav-item {
+    color: #E5E5E5;
+    padding: $spacing-03 $spacing-05;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: #181818;
+      color: #FFFFFF;
+    }
+    
+    &.active {
+      background: #DC0000;
+      color: #FFFFFF;
+    }
+  }
+  
+  .ferrari-create-btn {
+    background: #DC0000;
+    color: #FFFFFF;
+    border-radius: 24px;
+    padding: $spacing-03 $spacing-05;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    &:hover {
+      background: #B00000;
+    }
+  }
+}
+
+// Ferrari Content Area
+.ferrari-content {
+  background: #181818;
+  
+  .ferrari-project-header {
+    background: #000000;
+    border-bottom: 1px solid #404040;
+    padding: $spacing-05 $spacing-06;
+  }
+  
+  .ferrari-board {
+    background: #181818;
+    padding: $spacing-06;
+  }
+}
+
+// Ferrari Card Styles
+.ferrari-card {
+  background: #000000;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: $spacing-05;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: #DC0000;
+    box-shadow: 0 4px 12px rgba(220, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+// Ferrari Button Styles
+.ferrari-btn {
+  background: transparent;
+  border: 2px solid #404040;
+  color: #FFFFFF;
+  padding: $spacing-03 $spacing-05;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: #DC0000;
+    color: #DC0000;
+  }
+  
+  &.primary {
+    background: #DC0000;
+    border-color: #DC0000;
+    
+    &:hover {
+      background: #B00000;
+      border-color: #B00000;
+      color: #FFFFFF;
+    }
+  }
+}
+
+// Ferrari Tab Styles
+.ferrari-tabs {
+  border-bottom: 1px solid #404040;
+  
+  .ferrari-tab {
+    color: #737373;
+    padding: $spacing-04 $spacing-05;
+    border-bottom: 2px solid transparent;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: #E5E5E5;
+    }
+    
+    &.active {
+      color: #FFFFFF;
+      border-bottom-color: #DC0000;
+    }
+  }
+}
+
+// Ferrari Column Styles
+.ferrari-column {
+  background: #000000;
+  border-radius: 8px;
+  padding: $spacing-05;
+  min-width: 304px;
+  
+  .ferrari-column-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: $spacing-04;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .ferrari-column-count {
+    color: #737373;
+    font-size: 13px;
+  }
+}
+
+// Ferrari Task Card
+.ferrari-task-card {
+  background: #181818;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: $spacing-05;
+  margin-bottom: $spacing-04;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: #DC0000;
+    box-shadow: 0 2px 8px rgba(220, 0, 0, 0.15);
+  }
+  
+  .ferrari-task-title {
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: $spacing-03;
+  }
+  
+  .ferrari-task-meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    color: #737373;
+    font-size: 12px;
+  }
+}
+
+// Ferrari Input Styles
+.ferrari-input {
+  background: #27272A;
+  border: 1px solid #404040;
+  color: #FFFFFF;
+  padding: $spacing-03 $spacing-04;
+  border-radius: 4px;
+  font-size: 13px;
+  
+  &:focus {
+    border-color: #DC0000;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(220, 0, 0, 0.2);
+  }
+  
+  &::placeholder {
+    color: #737373;
+  }
+}
+
+// Ferrari Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ferrari-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+// Ferrari Utility Classes
+.ferrari-text-red {
+  color: #DC0000;
+}
+
+.ferrari-bg-red {
+  background-color: #DC0000;
+}
+
+.ferrari-border-red {
+  border-color: #DC0000;
+}
+
+.ferrari-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .ferrari-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #404040;
+  }
+  
+  .ferrari-column {
+    min-width: 280px;
+  }
+}
