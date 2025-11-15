@@ -1,4 +1,9 @@
+import { useApp } from "@/context/AppContext";
+
 export const ProjectTitle = () => {
+  const { state } = useApp();
+  const currentProject = state.currentProjectId ? state.projects[state.currentProjectId] : null;
+
   return (
     <div>
       <h1 style={{
@@ -8,7 +13,7 @@ export const ProjectTitle = () => {
         textTransform: 'uppercase',
         letterSpacing: '1px'
       }}>
-        Ferrari Board
+        {currentProject?.name || 'No Project Selected'}
       </h1>
     </div>
   );

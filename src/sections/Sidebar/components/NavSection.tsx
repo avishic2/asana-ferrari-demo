@@ -6,10 +6,13 @@ export type NavSectionProps = {
   title: string;
   hasNewButton?: boolean;
   newButtonAriaLabel?: string;
+  onNewClick?: () => void;
   items: Array<{
     label: string;
     href: string;
     iconUrl: string;
+    onClick?: () => void;
+    isActive?: boolean;
   }>;
 };
 
@@ -28,6 +31,7 @@ export const NavSection = (props: NavSectionProps) => {
             variant="ghost"
             size="icon"
             aria-label={props.newButtonAriaLabel}
+            onClick={props.onNewClick}
             className="h-6 w-6 text-[#737373] hover:bg-[#181818] hover:text-[#DC0000]"
           >
             <Plus size={16} />
@@ -41,7 +45,15 @@ export const NavSection = (props: NavSectionProps) => {
             key={index}
             href={item.href}
             aria-label={item.label}
-            className="flex items-center gap-3 px-3 py-2 text-[#E5E5E5] hover:bg-[#181818] hover:text-white rounded-lg text-sm transition-all"
+            onClick={(e) => {
+              if (item.onClick) {
+                e.preventDefault();
+                item.onClick();
+              }
+            }}
+            className={`flex items-center gap-3 px-3 py-2 hover:bg-[#181818] hover:text-white rounded-lg text-sm transition-all ${
+              item.isActive ? 'bg-[#181818] text-white' : 'text-[#E5E5E5]'
+            }`}
           >
             <img
               src={item.iconUrl}
